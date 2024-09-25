@@ -1,0 +1,28 @@
+html,
+body {
+    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+body {
+    color: $gray-900;
+    background-color: $green-200;
+    font-family: "Regular";
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+}
+
+.wrapper {
+    margin: 1rem;
+    max-width: $wrapper-width;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include m1() {
+        width: $wrapper-width;
+        margin-inline: auto;
+    }
+}

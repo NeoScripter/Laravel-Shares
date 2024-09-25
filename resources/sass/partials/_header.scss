@@ -1,0 +1,20 @@
+.header {
+    background-color: $white;
+    padding: 1rem;
+}
+
+.header__nav {
+    margin-left: auto;
+    width: min-content;
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        @include fs16($white);
+    }
+}
+
+.header__link {
+    @include btn-secondary(min-content);
+}

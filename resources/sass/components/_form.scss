@@ -1,0 +1,75 @@
+.webform {
+    border-radius: 1rem;
+    background-color: $white;
+    padding: 1.5rem;
+    width: 100%;
+
+    @include m2() {
+        padding: rem(40px);
+    }
+}
+
+.webform__title {
+    @include fs32();
+}
+
+.webform__group {
+    margin-block: rem(24px);
+}
+
+.webform__label {
+    display: block;
+    margin-bottom: 0.5rem;
+    @include fs16();
+
+    span {
+        color: $green-600;
+    }
+}
+
+.webform__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.3rem;
+    border: rem(1px) solid $gray-500;
+
+    @include hover() {
+        border-color: $green-600;
+    }
+
+    &:focus-visible {
+        outline: rem(1px) solid $green-600;
+    }
+}
+
+.webform__error {
+    margin-top: 0.5rem;
+    display: block;
+
+    @include fs16($red);
+}
+
+.webform__checkbox-group {
+    margin-block: rem(40px);
+}
+
+.webform__checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+
+    .webform__label {
+        margin-bottom: 0;
+    }
+}
+
+.webform__checkbox {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.webform__btn {
+    @include btn-primary();
+}

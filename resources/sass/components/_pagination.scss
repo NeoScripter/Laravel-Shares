@@ -1,0 +1,40 @@
+.pagination-nav {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    li {
+        span,
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 1rem;
+            height: 1rem;
+            background-color: transparentize($color: $green-600, $amount: 0.4);
+            color: $white;
+            font-size: 1rem;
+
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: none;
+            user-select: none;
+
+            color: $white;
+            font-family: "Bold";
+            text-transform: uppercase;
+            font-weight: 800;
+            line-height: 150%;
+
+        }
+
+        a {
+            cursor: pointer;
+            background-color: $green-600;
+            @include hover() {
+                background: $btn-gradient;
+            }
+        }
+    }
+}

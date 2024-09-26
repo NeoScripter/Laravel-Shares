@@ -1,18 +1,16 @@
 @extends('partials.app')
 
-@section('title', 'Home')
+@section('title', 'Share')
 
 @section('content')
     @include('partials/popup')
-    @include('share')
-    @foreach ($shares as $share)
     <div class="share">
         <div class="share__headline">
             <div class="share__image">
                 <img src="{{ asset('images/johndoe.jpg')}}" alt="John Doe">
             </div>
             <h3 class="share__name">Mario</h3>
-            <a href="{{ route('shares.show', $share->id) }}" class="share__btn">Edit</a>
+            <button class="share__btn">Edit</button>
         </div>
         <div class="share__text">
             {{ $share->content }}
@@ -29,6 +27,4 @@
             </div>
         </div>
     </div>
-    @endforeach
-    {{ $shares->links('vendor.pagination.default') }}
 @endsection

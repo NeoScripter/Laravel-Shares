@@ -1,5 +1,107 @@
+
 .share {
     background-color: $white;
     border-radius: 1rem;
     padding: 1rem;
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @include m1() {
+        padding: 1.5rem;
+    }
+}
+
+.share__label {
+    @include fs24();
+}
+
+#share__textarea {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: rem(1px) solid $gray-500;
+    @include fs16();
+
+    @include hover() {
+        border-color: $green-600;
+    }
+
+    &:focus-visible {
+        outline: rem(1px) solid $green-600;
+    }
+
+    &.share__textarea--error {
+        border-color: $red;
+
+        &:focus-visible {
+            outline: rem(1px) solid $red;
+        }
+    }
+}
+
+.share__headline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .share__btn {
+        margin-left: auto;
+    }
+}
+
+.share__image {
+    width: 3.5rem;
+    height: 3.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+
+    img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.share__name {
+    @include fs32();
+}
+
+.share__btn {
+    @include btn-secondary(min-content);
+}
+
+.share__text {
+    @include fs16();
+}
+
+.share__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.share__delete-btn {
+    margin-top: 0.5rem;
+    @include btn-delete(min-content);
+}
+
+.share__time {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    img {
+        width: 1rem;
+    }
+
+    @include fs16();
+}
+
+.share__error {
+    @include fs16($red);
 }

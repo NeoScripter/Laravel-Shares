@@ -9,9 +9,9 @@
     <div class="share">
         <div class="share__headline">
             <div class="share__image">
-                <img src="{{ asset('images/johndoe.jpg')}}" alt="John Doe">
+                <img src="{{ $share->user->getImageURL() }}" alt="{{ $share->user->name }}">
             </div>
-            <h3 class="share__name">Mario</h3>
+            <h3 class="share__name">{{ $share->user->name }}</h3>
             <a href="{{ route('shares.edit', $share->id) }}" class="share__btn">Edit</a>
         </div>
         <div class="share__text">

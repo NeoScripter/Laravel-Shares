@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Share extends Model
 {
+    use HasFactory;
+
     protected $fillable = ['content', 'user_id'];
 
-    use HasFactory;
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -73,3 +73,40 @@
 .webform__btn {
     @include btn-primary();
 }
+
+.profile__wrapper {
+
+    @include m1() {
+        margin-block: 0.5rem;
+    }
+}
+
+.profile__label {
+    display: block;
+}
+
+.profile__image {
+    width: min-content;
+}
+
+.share__name--profile {
+    height: min-content;
+}
+
+.share__headline--profile {
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.share__name--profile {
+    border-radius: 0.3rem;
+    border: rem(1px) solid $gray-500;
+
+    @include hover() {
+        border-color: $green-600;
+    }
+
+    &:focus-visible {
+        outline: rem(1px) solid $green-600;
+    }
+}

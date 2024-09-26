@@ -16,8 +16,11 @@
 }
 
 .header__auth-il {
-    margin-right: 1rem;
     @include fs24($gray-900);
+
+    @include m1() {
+        margin-right: 1rem;
+    }
 }
 
 .header__link {

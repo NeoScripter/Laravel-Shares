@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 
-Route::get('/shares/{share}/edit', [ShareController::class, 'edit'])->name('shares.edit');
+Route::get('/shares/{share}/edit', [ShareController::class, 'edit'])->name('shares.edit')->middleware('auth');
 
-Route::put('/shares/{share}', [ShareController::class, 'update'])->name('shares.update');
+Route::put('/shares/{share}', [ShareController::class, 'update'])->name('shares.update')->middleware('auth');
 
-Route::post('/shares', [ShareController::class, 'store'])->name('shares.store');
+Route::post('/shares', [ShareController::class, 'store'])->name('shares.store')->middleware('auth');
 
-Route::delete('/shares/{share}', [ShareController::class, 'destroy'])->name('shares.destroy');
+Route::delete('/shares/{share}', [ShareController::class, 'destroy'])->name('shares.destroy')->middleware('auth');
 
 
 

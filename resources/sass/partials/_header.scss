@@ -5,17 +5,29 @@
 }
 
 .header__nav {
-    margin-left: auto;
-    width: min-content;
     ul {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 1rem;
 
         @include fs16($white);
     }
 }
 
+.header__auth-il {
+    margin-right: 1rem;
+    @include fs24($gray-900);
+}
+
 .header__link {
     @include btn-secondary(min-content);
+}
+
+.header li:has(.header__link--login) {
+    margin-left: auto;
+}
+
+.header .header__link--admin {
+    margin-left: auto;
 }

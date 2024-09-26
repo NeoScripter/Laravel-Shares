@@ -12,7 +12,7 @@
                 <img src="{{ asset('images/johndoe.jpg')}}" alt="John Doe">
             </div>
             <h3 class="share__name">Mario</h3>
-            <a href="{{ route('shares.show', $share->id) }}" class="share__btn">Edit</a>
+            <a href="{{ route('shares.edit', $share->id) }}" class="share__btn">Edit</a>
         </div>
         <div class="share__text">
             {{ $share->content }}

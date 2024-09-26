@@ -17,7 +17,8 @@
     @include fs24();
 }
 
-#share__textarea {
+#share__textarea,
+.share__textarea {
     margin-top: 0.5rem;
     padding: 0.5rem;
     border-radius: 0.3rem;
@@ -39,6 +40,10 @@
             outline: rem(1px) solid $red;
         }
     }
+}
+
+.share__textarea {
+    width: 100%;
 }
 
 .share__headline {

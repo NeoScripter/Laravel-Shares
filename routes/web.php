@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\ShareController;
 use Illuminate\Support\Facades\Route;
@@ -17,8 +18,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomepageController::class, 'index'])->name('home');
 
-Route::get('/shares/{share}', [ShareController::class, 'show'])->name('shares.show');
+Route::get('/shares/{share}/edit', [ShareController::class, 'edit'])->name('shares.edit');
+
+Route::put('/shares/{share}', [ShareController::class, 'update'])->name('shares.update');
 
 Route::post('/shares', [ShareController::class, 'store'])->name('shares.store');
 
 Route::delete('/shares/{share}', [ShareController::class, 'destroy'])->name('shares.destroy');
+
+
+
+Route::get('/signup', [AuthController::class, 'signup'])->name('signup');
+
+Route::post('/signup', [AuthController::class, 'store'])->name('signup.post');
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+
+Route::post('/login', [AuthController::class, 'authenticate'])->name('authenticate');
+
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

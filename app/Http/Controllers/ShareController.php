@@ -8,15 +8,16 @@ use Illuminate\Http\Request;
 
 class ShareController extends Controller
 {
-    public function show(Share $share) {
-        return view('share.show', [
+
+    public function edit(Share $share) {
+        return view('share.edit', [
             'share' => $share
         ]);
     }
 
     public function store() {
 
-        request()->validate([
+        $validated = request()->validate([
             'share' => [
                 'required',
                 'min:5',
@@ -25,12 +26,29 @@ class ShareController extends Controller
             ],
         ]);
 
-        $share = new Share([
-            'content' => request()->get('share', '')
-        ]);
-        $share->save();
+        $validated['content'] = $validated['share'];
+        $validated['user_id'] = auth()->id();
+
+        Share::create($validated);
 
         return redirect()->route('home')->with('success', 'Share successfully added!')->with('details', 'Thank you very much for sharing your thoughts with us today!');
+    }
+
+    public function update(Share $share) {
+
+        request()->validate([
+            'edit_share' => [
+                'required',
+                'min:5',
+                'max:240',
+                new NoProfanity(),
+            ],
+        ]);
+
+        $share->content = request()->get('edit_share', '');
+        $share->save();
+
+        return redirect()->route('home')->with('success', 'Share successfully updated!')->with('details', 'Thank you for updating your share!');
     }
 
     public function destroy($id) {

@@ -50,8 +50,8 @@ class User extends Authenticatable
 
     public function getImageURL() {
         if ($this->image) {
-            return url('storage/app/public/' . $this->image);
+            return asset('storage/' . $this->image);
         }
-        return asset('images/johndoe.jpg');
+        return asset('images/default-avatar.jpg');
     }
 }

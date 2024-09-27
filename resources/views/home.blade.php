@@ -12,17 +12,21 @@
                 <img src="{{ $share->user->getImageURL() }}" alt="{{ $share->user->name }}">
             </div>
             <h3 class="share__name">{{ $share->user->name }}</h3>
-            <a href="{{ route('shares.edit', $share->id) }}" class="share__btn">Edit</a>
+            @if ((auth()->id() === $share->user_id))
+                <a href="{{ route('shares.edit', $share->id) }}" class="share__btn">Edit</a>
+            @endif
         </div>
         <div class="share__text">
             {{ $share->content }}
         </div>
         <div class="share__bottom">
-            <form action="{{ route('shares.destroy', $share->id) }}" method="post">
-                @csrf
-                @method('delete')
-                <button class="share__delete-btn">Delete</button>
-            </form>
+            @if ((auth()->id() === $share->user_id))
+                <form action="{{ route('shares.destroy', $share->id) }}" method="post">
+                    @csrf
+                    @method('delete')
+                    <button class="share__delete-btn">Delete</button>
+                </form>
+            @endif
             <div class="share__time">
                 <img src="{{ asset('images/clock.svg')}}" alt="clock">
                 {{ $share->created_at->diffForHumans() }}

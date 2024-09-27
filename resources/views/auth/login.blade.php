@@ -9,7 +9,7 @@
             @csrf
             <div class="webform__group">
                 <label for="email" class="webform__label">Email <span>*</span></label>
-                <input type="email" class="webform__input" id="email" name="email">
+                <input type="email" class="webform__input" id="email" name="email" value="{{ old('email') }}">
                 @error('email')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror

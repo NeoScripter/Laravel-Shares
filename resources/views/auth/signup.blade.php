@@ -9,14 +9,14 @@
             @csrf
             <div class="webform__group">
                 <label for="username" class="webform__label">Username <span>*</span></label>
-                <input type="text" class="webform__input" id="username" name="username">
+                <input type="text" class="webform__input" id="username" name="username" value="{{ old('username') }}">
                 @error('username')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror
             </div>
             <div class="webform__group">
                 <label for="email" class="webform__label">Email <span>*</span></label>
-                <input type="email" class="webform__input" id="email" name="email">
+                <input type="email" class="webform__input" id="email" name="email" value="{{ old('email') }}">
                 @error('email')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror

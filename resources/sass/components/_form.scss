@@ -41,6 +41,14 @@
     &:focus-visible {
         outline: rem(1px) solid $green-600;
     }
+
+    &.webform__input--error {
+        border-color: $red;
+
+        &:focus-visible {
+            outline: rem(1px) solid $red;
+        }
+    }
 }
 
 .webform__error {

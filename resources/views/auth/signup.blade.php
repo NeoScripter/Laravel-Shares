@@ -9,28 +9,28 @@
             @csrf
             <div class="webform__group">
                 <label for="username" class="webform__label">Username <span>*</span></label>
-                <input type="text" class="webform__input" id="username" name="username" value="{{ old('username') }}">
+                <input type="text" class="webform__input {{ $errors->has('username') ? 'webform__input--error' : '' }}" id="username" name="username" value="{{ old('username') }}">
                 @error('username')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror
             </div>
             <div class="webform__group">
                 <label for="email" class="webform__label">Email <span>*</span></label>
-                <input type="email" class="webform__input" id="email" name="email" value="{{ old('email') }}">
+                <input type="email" class="webform__input {{ $errors->has('email') ? 'webform__input--error' : '' }}" id="email" name="email" value="{{ old('email') }}">
                 @error('email')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror
             </div>
             <div class="webform__group">
                 <label for="password" class="webform__label">Password <span>*</span></label>
-                <input type="password" class="webform__input" id="password" name="password">
+                <input type="password" class="webform__input {{ $errors->has('password') ? 'webform__input--error' : '' }}" id="password" name="password">
                 @error('password')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror
             </div>
             <div class="webform__group">
                 <label for="confirm-password" class="webform__label">Confirm Password <span>*</span></label>
-                <input type="password" class="webform__input" id="confirm-password" name="password_confirmation">
+                <input type="password" class="webform__input {{ $errors->has('password_confirmation') ? 'webform__input--error' : '' }}" id="confirm-password" name="password_confirmation">
                 @error('password_confirmation')
                     <span class="webform__error"> {{ $message }}</span>
                 @enderror
